@@ -11,9 +11,9 @@
                  [print-foo "0.5.3"]]
 
   :resource-paths ["schema"]
-
-  :asciidoc     {:sources ["doc/*.adoc" "doc/data-platform/*.adoc"]
-                 ;:to-dir "doc/html"
+  :plugins [[lein-asciidoctor "0.1.14"]]
+  :asciidoc     {:sources ["doc/*.adoc"]
+;                 :to-dir "doc/html"
                  :toc              :left
                  :doctype          :article
                  :format           :html5
