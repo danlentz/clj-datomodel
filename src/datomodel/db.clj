@@ -7,7 +7,7 @@
             [clojure.string  :as string]
             [clojure.tools.logging :as log]
             [datomodel.state :as state]
-            [datomodel.util  :as utx]
+            [datomodel.util  :as util]
             [datomodel.edn   :as fedn]
             [datomodel.db.fn :as fn]
             [datomodel.db.schema :as schema]))
@@ -30,7 +30,7 @@
 (defn- ensure-db [spec]
   (when (d/create-database spec)
     (initialize-db spec))
-  (utx/returning (d/db (conn spec))
+  (util/returning (d/db (conn spec))
     (deliver initialized-latch true)))
 
 
@@ -68,6 +68,8 @@
   @(d/transact (conn)
      (map #(vec [:db.fn/retractEntity (entity-id %)]) e-or-eids)))
 
+
+;; TODO: this is wrong
 
 (defn delete-db [spec]
   (swap! state/state assoc
