@@ -1,0 +1,4 @@
+{:db      {:url "datomic:dev://localhost:4334/"
+           :sid "datomodel"}
+ :required-schema [:dt :t :fn :any]
+ :nrepl   {:port 18888}}
