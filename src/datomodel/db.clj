@@ -1,16 +1,16 @@
 (ns datomodel.db
-  (:require [datomic.api     :as d]
-            [datomic.db      :as ddb]
-            [datomic.common  :as dcm]
-            [clojure.edn     :as edn]
-            [clojure.java.io :as io]
-            [clojure.string  :as string]
+  (:require [datomic.api          :as d]
+            [datomic.db           :as ddb]
+            [datomic.common       :as dcm]
+            [clojure.edn          :as edn]
+            [clojure.java.io      :as io]
+            [clojure.string       :as string]
             [clojure.tools.logging :as log]
-            [datomodel.state :as state]
-            [datomodel.util  :as util]
-            [datomodel.edn   :as fedn]
-            [datomodel.db.fn :as fn]
-            [datomodel.db.schema :as schema]))
+            [datomodel.state      :as state]
+            [datomodel.util       :as util]
+            [datomodel.edn        :as fedn]
+            [datomodel.db.fn      :as fn]
+            [datomodel.db.schema  :as schema]))
 
 (defonce initialized-latch (promise))
 

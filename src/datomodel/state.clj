@@ -1,7 +1,9 @@
 (ns datomodel.state
+  (:require [com.stuartsierra.component :as component])
+  (:require [clojure.tools.namespace.repl :refer (refresh refresh-all)])
+  (:require [datomodel.nrepl :as nrepl])
   (:require [datomodel.edn :as dedn])
   (:require [datomodel.util :as util]))
-
 
 (def state (atom {:db-spec      nil
                   :nrepl-server nil
